@@ -48,13 +48,14 @@ background-color:#99c19a;
 background-color:#cce0cc;
 }
 
+body{
+  margin-top: 20px;
+}
+
 .columnspacer{
   border-right: 1px solid #d3d3d3;
 }
 
-.textspacer{
-  border-bottom:1px solid #d3d3d3;
-}
 
 .formwrapper{
   max-width:60%;
@@ -65,7 +66,7 @@ background-color:#cce0cc;
 }
 
 .spacer{
-  height:100px;
+  height:50px;
 }
 
 button[type ="submit"]{
