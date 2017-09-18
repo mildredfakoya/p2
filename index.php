@@ -9,6 +9,24 @@ include "sanitize.php";
 <meta charset ="utf-8">
 <meta name ="viewport" content ="width=device-width, initial-scale =1.0">
 <link rel ="stylesheet" type ="text/css" href ="css/style.css">
+<script src="script/jquery-3.2.1.min.js"></script>
+<script>
+
+$(document).ready(function(){
+  $.dobPicker({
+    daySelector: '#dobday', /* Required */
+    monthSelector: '#dobmonth', /* Required */
+    yearSelector: '#dobyear', /* Required */
+    dayDefault: 'Day', /* Optional */
+    monthDefault: 'Month', /* Optional */
+    yearDefault: 'Year', /* Optional */
+    minimumAge: 0, /* Optional */
+    maximumAge: 100 /* Optional */
+  });
+});
+
+</script>
+<script src="script/datepicker.min.js"></script>
 </head>
 <body>
 <div class="row">
@@ -27,33 +45,45 @@ when all information are entered into the form, the code will be generated autom
   <form method ="post" action ="startest.php">
   <div class ="row">
   <div class ="col-6 columnspacer"><label for= "firstname">First Name </label></div>
-  <div class ="col-6"><input type ="text" name ="firstname" id ="firstname"></div>
-  </div>
+  <div class ="col-6"><input type ="text" name ="firstname" id ="firstname">  <span class ="error">*Required</span></div>
+</div>
 
   <div class ="row">
   <div class ="col-6 columnspacer"><label for= "lastname">Last Name </label></div>
-  <div class ="col-6"><input type ="text" name ="lastname" id ="lastname"></div>
-  </div>
+  <div class ="col-6"><input type ="text" name ="lastname" id ="lastname">  <span class ="error">*Required</span></div>
+ </div>
 
   <div class ="row">
   <div class ="col-6 columnspacer"><label for= "maidenname">Mothers' maiden Name </label></div>
-  <div class ="col-6"><input type ="text" name ="maidenname" id ="maidenname"></div>
-  </div>
+  <div class ="col-6"><input type ="text" name ="maidenname" id ="maidenname">  <span class ="error">*Required</span></div>
+ </div>
 
   <div class ="row">
   <div class ="col-6 columnspacer"><label for= "dob">Date of birth </label></div>
-  <div class ="col-6"><input type ="date" name ="dob" id ="dob"></div>
+  <div class ="col-6"><div class="row">
+<div class="col-4">
+<select id="dobday" name ='day'></select>
+</div>
+<div class="col-4">
+<select id="dobmonth" name ='month'></select>
+</div>
+<div class="col-4">
+<select id="dobyear" name ='year'></select>
+</div>
+<p id ='year' class ="error">Year of Birth is Required to Generate Testing Code. Leaving this field Blank will use an YY for testing code generation</p>
+</div></div>
   </div>
 
-  <div class ="row">
-  <div class ="col-6 columnspacer"><label for= "gender">Gender</label></div>
-  <div class ="col-6"><input type ="radio" name ="gender" value ="female">Female <input type ="radio" name = "gender" value ="male">Male</div>
-  </div>
+  <fieldset class ="row">
+ <legend>Select a Gender</legend>
+  <div class ="col-6"><input type ="radio" name ="gender" value ="female">Female </div>
+  <div class ="col-6"><input type ="radio" name = "gender" value ="male">Male </div>
+<span class ="error">*Required</span></fieldset>
 
   <div class ="row">
   <div class ="col-6 columnspacer"><label for= "card">Type of Photo ID</label></div>
 <div class ="col-6">
-  <select name ="card">
+  <select name ="card" id ="card">
     <option selected disabled>[choose here]</option>
     <option value= "driver's license">Driver's License</option>
     <option value= "National ID card">National ID card</option>
@@ -65,7 +95,8 @@ when all information are entered into the form, the code will be generated autom
 
   <div class ="row">
   <div class ="col-6 columnspacer"><label for= "notes">Note</label></div>
-  <div class ="col-6"><textarea rows = 5 cols =20></textarea></div>
+  <div class ="col-6"><textarea rows = 5 cols =20 id ="notes"></textarea> </div>
+
   </div>
 
  <button type ="submit"> Get Test Code </button>
