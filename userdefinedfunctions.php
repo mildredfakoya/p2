@@ -1,9 +1,5 @@
 <?php
 
-/**
-function to sanitize users input
-**/
-
 class UserDefinedFunctions
 {
     public function sanitize($input)
