@@ -1,5 +1,5 @@
 <?php
-
+namespace project2;
 class UserDefinedFunctions
 {
     public function sanitize($input)

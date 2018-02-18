@@ -3,14 +3,13 @@
 + Production URL: <http://p2.mildredfakoya.me>
 
 ## Outside resources
-*none*
+*date picker from jquery UI*
 
 ## Code style divergences
 *None*
 
 ## Notes for instructor
-*Error messages are generated beside each required field when left blank and the value filled into the fields are retained  
-The mother's maiden name will be automatically filled with unknown when left blank.*
+*I did something a little different : error messages are displayed beside each problematic field and the data entered into the other fields which are correct are retained. When the form is submitted, the code is generated and the data that generated the code are left retained for easy reference. In order for the date to be displayed in a uniform way across all browsers, i used a date picker rather than the input type of date.*
 
 
 
