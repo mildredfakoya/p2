@@ -3,7 +3,7 @@
 + Production URL: <http://p2.mildredfakoya.me>
 
 ## Outside resources
-*date picker from jquery UI*
+*date picker from jquery UI <https://jqueryui.com/datepicker>*
 
 ## Code style divergences
 *None*
